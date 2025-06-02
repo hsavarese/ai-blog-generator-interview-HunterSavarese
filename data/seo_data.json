@@ -1,4 +1,9 @@
 {
+    "default": {
+        "search_volume": 3000,
+        "keyword_difficulty": 0.5,
+        "avg_cpc": 1.5
+    },
     "beats": {
         "search_volume": 3000,
         "keyword_difficulty": 0.7,
