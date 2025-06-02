@@ -1,22 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <title>Blog Post Generator</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>SEO Checker</h1>
-    <form action="/seo" method="GET">
-        <input type="text" name="keyword" placeholder="Enter a keyword">
-        <button type="submit">Check</button>
-    </form>
+    <h1>Blog Post Generator</h1>
+    
+    <div class="section">
+        <form action="/generate" method="GET">
+            <input type="text" name="keyword" placeholder="Enter a keyword">
+            <button type="submit">Generate Blog Post</button>
+        </form>
 
-    <div id="results">
-        {% if keyword %}
-            <p>Keyword: {{ keyword }}</p>
-            <p>Search Volume: {{ metrics.search_volume }}</p>
-            <p>Keyword Difficulty: {{ metrics.keyword_difficulty }}</p>
-            <p>Average CPC: ${{ metrics.avg_cpc }}</p>
-        {% endif %}
+        <div id="results">
+            {% if keyword %}
+                {% if metrics %}
+                    <h3>SEO Metrics for "{{ keyword }}"</h3>
+                    <p>Search Volume: {{ metrics.search_volume }}</p>
+                    <p>Keyword Difficulty: {{ metrics.keyword_difficulty }}</p>
+                    <p>Average CPC: ${{ metrics.avg_cpc }}</p>
+                {% endif %}
+                
+                {% if post %}
+                    <h3>Generated Blog Post</h3>
+                    <div class="blog-content">
+                        {{ post | safe }}
+                    </div>
+                {% endif %}
+            {% endif %}
+        </div>
     </div>
 </body>
 </html> 

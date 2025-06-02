@@ -9,7 +9,7 @@ def get_seo_metrics(keyword):
     }
 
 if __name__ == "__main__":
-    test_keyword = ""
+    test_keyword = "beats"
     metrics = get_seo_metrics(test_keyword)
     print(f"SEO Metrics for '{test_keyword}':")
     print(f"Search Volume: {metrics['search_volume']}")
