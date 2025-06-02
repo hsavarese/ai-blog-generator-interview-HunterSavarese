@@ -1,0 +1,83 @@
+{
+    "beats": {
+        "search_volume": 3000,
+        "keyword_difficulty": 0.7,
+        "avg_cpc": 2.5
+    },
+    "headphones": {
+        "search_volume": 25000,
+        "keyword_difficulty": 0.8,
+        "avg_cpc": 3.2
+    },
+    "wireless earbuds": {
+        "search_volume": 15000,
+        "keyword_difficulty": 0.6,
+        "avg_cpc": 2.8
+    },
+    "gaming setup": {
+        "search_volume": 8000,
+        "keyword_difficulty": 0.5,
+        "avg_cpc": 4.0
+    },
+    "home office": {
+        "search_volume": 40000,
+        "keyword_difficulty": 0.9,
+        "avg_cpc": 5.5
+    },
+    "dell laptop": {
+        "search_volume": 18000,
+        "keyword_difficulty": 0.7,
+        "avg_cpc": 3.0
+    },
+    "macbook": {
+        "search_volume": 22000,
+        "keyword_difficulty": 0.8,
+        "avg_cpc": 4.5
+    },
+    "macbook air": {
+        "search_volume": 10000,
+        "keyword_difficulty": 0.7,
+        "avg_cpc": 3.0
+    },
+    "macbook pro": {
+        "search_volume": 10000,
+        "keyword_difficulty": 0.7,
+        "avg_cpc": 3.0
+    },
+    "gaming chair": {
+        "search_volume": 12000,
+        "keyword_difficulty": 0.6,
+        "avg_cpc": 3.8
+    },
+    "razor mouse": {
+        "search_volume": 5000,
+        "keyword_difficulty": 0.4,
+        "avg_cpc": 2.2
+    },
+    "razor laptop": {
+        "search_volume": 15000,
+        "keyword_difficulty": 0.7,
+        "avg_cpc": 3.0
+    },
+    "razor laptop for gaming": {
+        "search_volume": 12000,
+        "keyword_difficulty": 0.7,
+        "avg_cpc": 3.0
+    },
+    "PC's": {
+        "search_volume": 35000,
+        "keyword_difficulty": 0.7,
+        "avg_cpc": 3.0
+    },
+    "PC's for gaming": {
+        "search_volume": 7000,
+        "keyword_difficulty": 0.3,
+        "avg_cpc": 3.0
+    },
+    "PC's for work": {
+        "search_volume": 20000,
+        "keyword_difficulty": 0.9,
+        "avg_cpc": 3.0
+    }
+}
+
