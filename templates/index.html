@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>SEO Checker</h1>
+    <form action="/seo" method="GET">
+        <input type="text" name="keyword" placeholder="Enter a keyword">
+        <button type="submit">Check</button>
+    </form>
+
+    <div id="results">
+        {% if keyword %}
+            <p>Keyword: {{ keyword }}</p>
+            <p>Search Volume: {{ metrics.search_volume }}</p>
+            <p>Keyword Difficulty: {{ metrics.keyword_difficulty }}</p>
+            <p>Average CPC: ${{ metrics.avg_cpc }}</p>
+        {% endif %}
+    </div>
+</body>
+</html> 
