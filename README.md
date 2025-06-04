@@ -34,3 +34,22 @@ OPENAI_API_KEY=your_api_key_here
 ```
 
 You can get an API key by signing up at [OpenAI's website](https://platform.openai.com/).
+
+## How to run the Application:
+ In the terminal run:
+```bash
+python app.py
+```
+
+- This will start the Flask web server on http://localhost:5000.
+- Launch the scheduler for daily blof post generation
+- open the web interface so you can generate blog posts manually
+
+Simply enter a keyword into the box and hit "Generate Blog Post" 
+
+## How the Schedular works
+
+- It runs every day at 3am
+- Will automatically generate a blog post about "wireless earbuds" 
+- Saves the generated post the "generated_posts folder. 
+- Each post is saved as a json file with, the content, SEO metrics, timestamp, and keyword used. 
