@@ -42,8 +42,8 @@ def generate_blog_post(keyword, seo_metrics):
     Here's how to structure it:
     1. Start with something that'll grab attention, maybe a cool fact or a relatable situation
     2. Share a quick personal story or example that connects with the topic
-    3. Dive into 3-4 main points, but keep it interesting and easy to follow
-    4. When it feels natural, drop in 2-3 affiliate links (use {{AFF_LINK_n}}) where they actually help the reader
+    3. Dive into 3 to 4 main points, but keep it interesting and easy to follow
+    4. When it feels natural, drop in 2 to 3 affiliate links (use {{AFF_LINK_n}}) where they actually help the reader
     5. Wrap it up with something that makes people want to learn more or take action
 
     Pro tips:

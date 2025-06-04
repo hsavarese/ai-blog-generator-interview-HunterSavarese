@@ -1,28 +1,60 @@
 from flask import Flask, jsonify, request, render_template
 from seo_fetcher import get_seo_metrics
 from ai_generator import generate_blog_post
+import os
+import json
+from datetime import datetime
+from apscheduler.schedulers.background import BackgroundScheduler
 
-app = Flask(__name__)
-TEMPLATE = 'index.html'
+app = Flask(__name__) 
+TEMPLATE = 'index.html' #template for home page
 
-@app.route('/')
+@app.route('/') #route for home page
 def home():
     return render_template(TEMPLATE)
 
-@app.route('/generate', methods=['GET'])
-def generate():
-    keyword = request.args.get('keyword', '')
+@app.route('/generate', methods=['GET']) #route for generating blog post
+def generate(): 
+    keyword = request.args.get('keyword', '') 
     if not keyword:
-        return render_template(TEMPLATE)
+        return render_template(TEMPLATE) #if no keyword, render home page
     
     # gets SEO metrics
     metrics = get_seo_metrics(keyword)
-    
-    # generates blog post
-    post = generate_blog_post(keyword, metrics)
-    
+    post = generate_blog_post(keyword, metrics)  # generates blog post
+    save_generated_post(keyword, metrics, post)
     # returns both metrics and post
     return render_template(TEMPLATE, keyword=keyword, metrics=metrics, post=post)
 
-if __name__ == '__main__':
+def generate_daily_post():
+    keyword = "wireless earbuds"
+    try:
+        metrics = get_seo_metrics(keyword)
+        post = generate_blog_post(keyword, metrics)
+        filepath = save_generated_post(keyword, metrics, post)
+        print(f"Daily post generated and saved: {filepath}")
+    except Exception as e:
+        print(f"Error generating daily post: {e}")
+
+
+def save_generated_post(keyword, metrics, post):
+    timestamp=datetime.now().strftime("%Y-%m-%d %H-%M-%S") #get current timestamp
+    filename=f"{timestamp}_{keyword.lower().replace(' ', '_')}.json" #create filename with timestamp and keyword
+    filepath=os.path.join("generated_posts", filename) 
+    data={
+        "timestamp":timestamp,
+        "keyword":keyword,
+        "metrics":metrics,
+        "post":post
+    }
+
+    with open(filepath, 'w', encoding='utf-8') as f:
+        json.dump(data, f, indent=2)
+    #save generated post to database
+    
+
+if __name__ == '__main__': #run app
+    scheduler = BackgroundScheduler()
+    scheduler.add_job(func=generate_daily_post, trigger="cron", hour=3, minute=0)
+    scheduler.start()
     app.run(debug=True)
