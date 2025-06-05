@@ -16,16 +16,19 @@ h1 {
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 8px;
+    align-items: center;
 }
 
 form {
     margin-bottom: 20px;
+    justify-content: center;
 }
 
 input[type="text"] {
     padding: 8px;
     width: 60%;
     margin-right: 10px;
+  
 }
 
 button {
@@ -35,6 +38,7 @@ button {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+  
 }
 
 button:hover {
@@ -55,4 +59,47 @@ button:hover {
     border-radius: 4px;
     margin-top: 10px;
 }
+
+nav {
+    background-color: #928c8cc3;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+    color: #000000;
+}
+
+
+.post-content {
+    text-align: center;
+   
+}
+
+
+
+
+
+
+
+
+
 

@@ -25,6 +25,15 @@ def generate():
     # returns both metrics and post
     return render_template(TEMPLATE, keyword=keyword, metrics=metrics, post=post)
 
+@app.route('/templates/example_wireless_earbuds')
+def example_wireless_earbuds():
+    keyword = "wireless earbuds"
+    metrics = get_seo_metrics(keyword)
+    post = generate_blog_post(keyword, metrics)
+    return render_template('example_wireless_earbuds.html', post=post)
+
+
+
 def generate_daily_post():
     keyword = "wireless earbuds"
     try:

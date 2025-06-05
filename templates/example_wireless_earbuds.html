@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example Wireless Earbuds Blog Post</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Hunter's Blog Post Generator</a></li>
+            <li><a href="/templates/example_wireless_earbuds">Example Generated Blog Post</a></li>
+        </ul>
+    </nav>
+    <h1>Example Generated Blog Post</h1>
+    <div class="section">
+        <h2>Wireless Earbuds</h2>
+        <div class="blog-content">
+            {{ post | safe }}
+        </div>
+    </div>
+</body>
+</html>
+
+
