@@ -22,7 +22,6 @@ def generate():
     # gets SEO metrics
     metrics = get_seo_metrics(keyword)
     post = generate_blog_post(keyword, metrics)  # generates blog post
-    save_generated_post(keyword, metrics, post)
     # returns both metrics and post
     return render_template(TEMPLATE, keyword=keyword, metrics=metrics, post=post)
 
@@ -31,8 +30,8 @@ def generate_daily_post():
     try:
         metrics = get_seo_metrics(keyword)
         post = generate_blog_post(keyword, metrics)
-        filepath = save_generated_post(keyword, metrics, post)
-        print(f"Daily post generated and saved: {filepath}")
+        save_generated_post(keyword, metrics, post)  # Only save daily posts
+        print(f"Daily post generated and saved for keyword: {keyword}")
     except Exception as e:
         print(f"Error generating daily post: {e}")
 

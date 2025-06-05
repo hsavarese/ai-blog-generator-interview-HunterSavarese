@@ -13,3 +13,6 @@ __pycache__/
 # IDE
 .vscode/
 .idea/ 
+
+# generated content
+generated_posts/ 
