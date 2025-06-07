@@ -66,3 +66,4 @@ if __name__ == '__main__': #run app
     scheduler.add_job(func=generate_daily_post, trigger="cron", hour=3, minute=0)
     scheduler.start()
     app.run(debug=True)
+

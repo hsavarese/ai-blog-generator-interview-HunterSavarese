@@ -53,3 +53,33 @@ Simply enter a keyword into the box and hit "Generate Blog Post"
 - Will automatically generate a blog post about "wireless earbuds" 
 - Saves the generated post the "generated_posts folder. 
 - Each post is saved as a json file with, the content, SEO metrics, timestamp, and keyword used. 
+
+## Testing
+
+I've got a solid test suite that makes sure everything works as expected. Here's what I test:
+
+### What I Test
+- The web interface loads correctly and handles different inputs
+- Blog post generation works with various keywords
+- SEO metrics are fetched and processed correctly
+- The daily scheduler runs at the right time (3 AM)
+- Error handling for things like missing API keys or failed requests
+- Saving and loading generated posts
+
+### Running Tests
+To run the tests, make sure you're in your virtual environment and run:
+```bash
+pytest
+```
+
+For a detailed coverage report showing which parts of the code are tested:
+```bash
+pytest --cov=.
+```
+
+### Test Coverage
+I maintain high test coverage (over 90%) to ensure the application is reliable. The tests check:
+- All main features work correctly
+- Edge cases are handled properly
+- Error messages are clear and helpful
+- The scheduler and automation features run smoothly
